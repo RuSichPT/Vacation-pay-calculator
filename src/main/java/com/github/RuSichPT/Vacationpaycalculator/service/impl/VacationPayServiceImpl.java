@@ -34,7 +34,7 @@ public class VacationPayServiceImpl implements VacationPayService {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             start = LocalDate.parse(startDate, formatter);
         } catch (DateTimeException ex) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Date is not correctly. Pattern dd-MM-yyyy", ex);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Date is not correctly. Pattern yyyy-MM-dd", ex);
         }
         int resultDays = numDays;
         for (int i = 0; i < numDays; i++) {
