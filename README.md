@@ -11,9 +11,9 @@
 - Swagger (Open API)
 
 ### API
-    GET api/v1/calculate/{meanSalary}/{numDays}/{startDate}
+    GET api/v1/calculate/{avgSalary}/{numDays}/{startDate}
 
-meanSalary - средню€ зарплата за 12 мес€цев  
+avgSalary - средню€ зарплата за 12 мес€цев  
 numDays - количество дней отпуска  
 startDate (необ€зательный) - дата начала отпуска  
 

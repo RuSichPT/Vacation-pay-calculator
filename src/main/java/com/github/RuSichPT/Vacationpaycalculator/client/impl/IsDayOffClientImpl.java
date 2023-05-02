@@ -29,7 +29,7 @@ public class IsDayOffClientImpl implements IsDayOffClient {
         try {
             return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Service isdayoff.ru is unavailable", e);
         }
     }
 
@@ -37,7 +37,7 @@ public class IsDayOffClientImpl implements IsDayOffClient {
     public boolean isDayOff(LocalDate date) {
         URI uri = URI.create(ROOT + date);
         HttpResponse<String> response = sendGet(uri);
-        log.info(date + " = " + response.body());
+        log.info(date + " " + date.getDayOfWeek() + " is day off = " + response.body());
         return response.body().equals("1");
     }
 }

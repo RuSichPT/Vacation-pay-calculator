@@ -1,6 +1,6 @@
 package com.github.RuSichPT.Vacationpaycalculator.service;
 
 public interface VacationPayService {
-    double calculateVacationPay(double meanSalary, int numDays);
-    double calculateVacationPay(double meanSalary, int numDays, String startDate);
+    double calculateVacationPay(double avgSalary, int numDays);
+    double calculateVacationPay(double avgSalary, int numDays, String startDate);
 }

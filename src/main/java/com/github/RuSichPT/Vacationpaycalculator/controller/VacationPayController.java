@@ -18,12 +18,12 @@ public class VacationPayController {
         this.vacationPayService = vacationPayService;
     }
 
-    @GetMapping({"calculate/{meanSalary}/{numDays}", "calculate/{meanSalary}/{numDays}/{startDate}"})
-    public double getVacationPay(@PathVariable double meanSalary, @PathVariable int numDays,
+    @GetMapping({"calculate/{avgSalary}/{numDays}", "calculate/{avgSalary}/{numDays}/{startDate}"})
+    public double getVacationPay(@PathVariable double avgSalary, @PathVariable int numDays,
                                  @PathVariable(required = false) String startDate) {
         if (startDate != null) {
-            return vacationPayService.calculateVacationPay(meanSalary, numDays, startDate);
+            return vacationPayService.calculateVacationPay(avgSalary, numDays, startDate);
         }
-        return vacationPayService.calculateVacationPay(meanSalary, numDays);
+        return vacationPayService.calculateVacationPay(avgSalary, numDays);
     }
 }
