@@ -6,6 +6,7 @@
 ## Использованные технологии
 - Java 11
 - Spring Boot
+- JUnit 5
 - Maven
 - Lombok
 - Swagger (Open API)
